@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span class="title"><a [routerLink]="['/user/registration']">NgTraining</a></span>
+  <button mat-button color="primary" [disableRipple]="true" [routerLinkActive]="['active']" [routerLink]="['/home']">Home</button>
+  <button mat-button color="primary" [disableRipple]="true" [routerLinkActive]="['active']" [routerLink]="['/task/list']">Tasks</button>
+  <span class="fill-remaining-space"></span>
+  <button mat-button color="primary" [disableRipple]="true" *ngIf="!authService.user" [routerLinkActive]="['active']" [routerLink]="['/user/registration']">Registration</button>
+  <button mat-button color="primary" [disableRipple]="true" *ngIf="!authService.user" [routerLinkActive]="['active']" [routerLink]="['/user/login']">Log In</button>
+  <button mat-button color="primary" [disableRipple]="true" *ngIf="!!authService.user"><mat-icon class="face-icon">face</mat-icon>{{authService.user.name}}</button>
+  <button mat-button color="primary" [disableRipple]="true" *ngIf="!!authService.user" [routerLinkActive]="['active']" [routerLink]="['/user/login']" (click)="authService.logout()">Log Out</button>
+</mat-toolbar>

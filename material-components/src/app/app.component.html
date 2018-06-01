@@ -1,0 +1,23 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="sidenav" mode="push">
+        <mat-list class="menu-list" role="list">
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()">Close</mat-list-item>
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()" [routerLinkActive]="['active']" [routerLink]="['/home']">Home</mat-list-item>
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()" [routerLinkActive]="['active']" [routerLink]="['/menu1']">Checkbox</mat-list-item>
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()" [routerLinkActive]="['active']" [routerLink]="['/menu2']">Datepicker</mat-list-item>
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()" [routerLinkActive]="['active']" [routerLink]="['/menu3']">Table</mat-list-item>
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()" [routerLinkActive]="['active']" [routerLink]="['/menu4']">Stagger</mat-list-item>
+            <mat-list-item class="menu-item" role="listitem" (click)="sidenav.toggle()" [routerLinkActive]="['active']" [routerLink]="['/menu5']">States</mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <mat-icon class="example-icon" (click)="sidenav.toggle()">subject</mat-icon>
+                <span>Components</span>
+                <span class="example-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="main-content" [@RoutAnimation]="o.isActivated ? o.activatedRoute : ''"><router-outlet #o="outlet"></router-outlet></div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

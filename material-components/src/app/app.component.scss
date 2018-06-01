@@ -1,0 +1,51 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+  }
+  
+  .sidenav {
+      background: #ddd;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
+
+  .mat-icon {
+      cursor: pointer;
+  }
+
+  .menu-list {
+      padding-top: 50px;
+  }
+
+  .menu-item{
+      padding: 30px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .menu-item {
+      padding: 10px 30px;
+      cursor: pointer;
+  }
+
+  .menu-item {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+
+  .active {
+      background: #fff;
+  }
+
+  .main-content {
+      padding: 20px 35px;
+  }

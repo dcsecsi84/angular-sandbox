@@ -1,0 +1,9 @@
+<table class="tftable">
+  <tr><td>ID</td><td>Name</td><td>Details</td><td>Type</td><td>Mass</td>
+  <tr *ngFor="let element of elements" (click)="onSelect(element)">
+    <td>{{element.id}}</td> <td>{{element.name}}</td> <td style="color: red">Click to edit</td> <td>{{element.type}}</td> <td>{{element.mass}}</td>
+  </tr>
+</table>
+
+<app-details [element]="selectedElement"></app-details>
+

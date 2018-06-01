@@ -1,0 +1,11 @@
+<div id="container" [@listAnimation]="items.length">
+  <button mat-raised-button color="primary" (click)="pushItem()">Add</button>
+  <button mat-button color="accent" (click)="removeItem()">Remove</button>
+
+  <span style="display: block; padding: 30px 0px 15px;">If you push quickly, you will see the delay between animations!</span>
+
+  <div id="list" *ngFor="let item of items">
+    <div class="item">{{item}}</div>
+  </div>
+
+</div>

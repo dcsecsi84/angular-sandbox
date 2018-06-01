@@ -1,0 +1,18 @@
+<h3>
+  My Tasks
+  <mat-spinner  [diameter]="25" [strokeWidth]="4" class="spinner" *ngIf="loading"></mat-spinner>
+</h3>
+<div>
+  <div *ngFor="let task of tasks">
+    <app-task-list-item
+      [task]="task"
+      [disabled]="loading"
+      (onError)="loadTasks()"
+      (onDelete)="removeTask($event)"
+    ></app-task-list-item>
+  </div>
+</div>
+
+<button class="add-new" mat-button color="accent" (click)="addNewTask()" [disabled]="loading">
+  <mat-icon class="add-icon">add_circle</mat-icon>Add New Task
+</button>

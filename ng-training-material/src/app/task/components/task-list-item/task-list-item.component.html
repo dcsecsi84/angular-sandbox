@@ -1,0 +1,9 @@
+<mat-checkbox [(ngModel)]="task.is_done" (change)="updateTask(task)" [disabled]="loading || disabled"></mat-checkbox>
+
+<mat-form-field><input matInput [(ngModel)]="task.name" (change)="updateTask(task)" [disabled]="loading || disabled"></mat-form-field>
+
+<button mat-button color="accent" (click)="deleteTask(task)">
+    <mat-icon class="delete-icon">delete</mat-icon>Delete
+</button>
+<span class="small">{{task.created_at|age:now}} min</span>
+<mat-spinner  [diameter]="20" [strokeWidth]="4" class="item-spinner" *ngIf="loading"></mat-spinner>
